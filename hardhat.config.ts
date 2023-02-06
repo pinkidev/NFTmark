@@ -1,10 +1,12 @@
 import "@nomicfoundation/hardhat-toolbox";
 import "hardhat-gas-reporter";
-import "dotenv/config";
 import "./tasks/block-number";
 import "solidity-coverage";
 import "@typechain/hardhat";
 import "hardhat-deploy";
+import dotenv from "dotenv";
+const envFile = process.env.NODE_ENV ? `.env.${process.env.NODE_ENV}` : '.env'
+dotenv.config({ path: envFile })
 
 /** @type import('hardhat/config').HardhatUserConfig */
 const GOERLI_TESTNET = process.env.GOERLI_TESTNET;
